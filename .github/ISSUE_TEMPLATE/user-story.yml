@@ -14,7 +14,7 @@ body:
       description: "Role of the user"
       placeholder: "[role]"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: need
@@ -23,7 +23,7 @@ body:
       description: "Function or capability required"
       placeholder: "[function]"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: benefit
@@ -32,7 +32,7 @@ body:
       description: "Expected benefit"
       placeholder: "[benefit]"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: details_and_assumptions
@@ -58,4 +58,4 @@ body:
         When [certain action is taken]
         Then [the outcome of action is observed]
     validations:
-      required: true
+      required: false
