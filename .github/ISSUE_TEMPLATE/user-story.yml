@@ -11,51 +11,51 @@ body:
     id: role
     attributes:
       label: "As a"
-      description: "Describe the role of the user"
-      placeholder: "e.g. Admin, Customer, System"
+      description: "Role of the user"
+      placeholder: "[role]"
     validations:
-      required: false
+      required: true
 
   - type: input
     id: need
     attributes:
       label: "I need"
-      description: "Describe what is needed"
-      placeholder: "e.g. reset my password"
+      description: "Function or capability required"
+      placeholder: "[function]"
     validations:
-      required: false
+      required: true
 
   - type: input
     id: benefit
     attributes:
       label: "So that"
-      description: "Describe the benefit or value"
-      placeholder: "e.g. reduce support calls"
+      description: "Expected benefit"
+      placeholder: "[benefit]"
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: details_and_assumptions
     attributes:
       label: "Details and Assumptions"
-      description: "Document what you know, assumptions, dependencies"
+      description: "Document what you know"
       placeholder: |
         * [document what you know]
-        * [assumptions]
-        * [dependencies]
+    validations:
+      required: false
 
   - type: textarea
     id: acceptance_criteria
     attributes:
-      label: "Acceptance Criteria (Gherkin format)"
+      label: "Acceptance Criteria (Gherkin)"
       description: |
-        Use Gherkin syntax:
+        Write in Gherkin format:
         Given [some context]
         When [certain action is taken]
         Then [the outcome of action is observed]
       placeholder: |
-        ```gherkin
         Given [some context]
         When [certain action is taken]
         Then [the outcome of action is observed]
-        ```
+    validations:
+      required: true
