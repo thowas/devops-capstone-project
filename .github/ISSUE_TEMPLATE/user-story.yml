@@ -1,23 +1,48 @@
 name: "User Story"
-description: "Template for creating a user story"
+description: "Template for user stories with Gherkin acceptance criteria"
 title: "[User Story] "
-labels: ["user-story"]
+labels:
+  - user story
+  - needs grooming
 assignees: []
 
 body:
-  - type: markdown
+  - type: input
+    id: role
     attributes:
-      value: |
-        **As a** [role]  
-        **I need** [function]  
-        **So that** [benefit]  
+      label: "As a"
+      description: "Describe the role of the user"
+      placeholder: "e.g. Admin, Customer, System"
+    validations:
+      required: true
+
+  - type: input
+    id: need
+    attributes:
+      label: "I need"
+      description: "Describe what is needed"
+      placeholder: "e.g. reset my password"
+    validations:
+      required: true
+
+  - type: input
+    id: benefit
+    attributes:
+      label: "So that"
+      description: "Describe the benefit or value"
+      placeholder: "e.g. reduce support calls"
+    validations:
+      required: true
 
   - type: textarea
     id: details_and_assumptions
     attributes:
       label: "Details and Assumptions"
-      description: "Document what you know"
-      placeholder: "* [document what you know]"
+      description: "Document what you know, assumptions, dependencies"
+      placeholder: |
+        * [document what you know]
+        * [assumptions]
+        * [dependencies]
 
   - type: textarea
     id: acceptance_criteria
@@ -29,6 +54,8 @@ body:
         When [certain action is taken]
         Then [the outcome of action is observed]
       placeholder: |
+        ```gherkin
         Given [some context]
         When [certain action is taken]
         Then [the outcome of action is observed]
+        ```
