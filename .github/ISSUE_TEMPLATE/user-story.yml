@@ -14,7 +14,7 @@ body:
       description: "Describe the role of the user"
       placeholder: "e.g. Admin, Customer, System"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: need
@@ -23,7 +23,7 @@ body:
       description: "Describe what is needed"
       placeholder: "e.g. reset my password"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: benefit
@@ -32,7 +32,7 @@ body:
       description: "Describe the benefit or value"
       placeholder: "e.g. reduce support calls"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: details_and_assumptions
