@@ -138,3 +138,13 @@ class TestAccountService(TestCase):
         """It should not Read an Account that is not found"""
         resp = self.client.get(f"{BASE_URL}/0")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_method_not_supported(self):
+        """It should return 405 Method Not Allowed when using an unsupported method"""
+        resp = self.client.post(f"{BASE_URL}/0")
+        self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+        data = resp.get_json()
+        self.assertEqual(data["status"], 405)
+        self.assertEqual(data["error"], "Method not Allowed")
+        self.assertTrue("405" in data["message"] or "not allowed" in data["message"].lower())
